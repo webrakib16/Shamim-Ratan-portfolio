@@ -287,11 +287,14 @@ header {
 .image-card {
     position: relative;
 
+    /* width: 100%;
+    max-width: 420px; */
+
     background: rgba(255, 255, 255, 0.04);
 
     border: 1px solid rgba(255, 255, 255, 0.08);
 
-    border-radius: 25px;
+    border-radius: 30px;
 
     overflow: hidden;
 
@@ -311,6 +314,8 @@ header {
 .image-card img {
     width: 100%;
     display: block;
+    /* height: 430px; */
+    /* object-fit: cover; */
 }
 
 
@@ -356,7 +361,8 @@ header {
 .section-tag {
     display: inline-block;
 
-    color: var(--gold);
+    color: var(--cyan) ;
+    /* var(--gold) */
 
     letter-spacing: 3px;
 
@@ -374,7 +380,10 @@ header {
 }
 
 .about-content h4 {
-    color: var(--cyan);
+    color: #AB9F82 ;
+    /* var(--cyan) 
+    
+    var(--gold)*/
 
     margin-bottom: 25px;
 
