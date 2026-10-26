@@ -376,8 +376,8 @@ export default function Gallery({ mode = 'preview' }) {
         <div className="section-title">
           <span>Academic Gallery</span>
           <h2>
-            Moments of Teaching &amp;
-            Academic Excellence
+            Moments of Teaching &amp;{' '}
+            <span className="section-title-highlight">Academic Excellence</span>
           </h2>
           <p>
             Showcasing Memorable Academic Milestones

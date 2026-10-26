@@ -43,7 +43,7 @@ export default function Navbar({ activePage = 'home' }) {
           <Link href="/#about">About</Link>
         </li>
         <li>
-          <Link href="/#journey">Education Journey</Link>
+          <Link href="/#journey">Education</Link>
         </li>
         <li>
           <Link
@@ -69,25 +69,20 @@ export default function Navbar({ activePage = 'home' }) {
           <a href="#contact">
             <button className="neon-button">
               <i className="fa-solid fa-paper-plane" style={{ marginRight: '6px' }}></i>
-              Get In Touch
+              <span className="neon-git-text">Get In Touch</span>
             </button>
           </a>
         </li>
       </ul>
 
       {/* ========================================================
-          MOBILE VIEW DIRECT ACTIONS: About & Get In Touch Visible Directly!
+          MOBILE VIEW DIRECT ACTIONS: Get In Touch & Hamburger Only!
       ========================================================= */}
       <div className="mobile-direct-actions">
-        {/* Directly visible About */}
-        <Link href="/#about" className="mobile-direct-about-link">
-          About
-        </Link>
-
         {/* Directly visible Get In Touch Button */}
         <a href="#contact" className="mobile-direct-contact-btn-wrap">
           <button className="neon-button mobile-small-neon">
-            Get In Touch
+            <span className="neon-git-text">Get In Touch</span>
           </button>
         </a>
 
@@ -122,7 +117,7 @@ export default function Navbar({ activePage = 'home' }) {
             </li>
             <li>
               <Link href="/#journey" onClick={closeMobileMenu}>
-                <i className="fa-solid fa-graduation-cap"></i> Education Journey
+                <i className="fa-solid fa-graduation-cap"></i> Education
               </Link>
             </li>
             <li>
@@ -132,7 +127,7 @@ export default function Navbar({ activePage = 'home' }) {
                 rel="noopener noreferrer"
                 onClick={closeMobileMenu}
               >
-                <i className="fa-solid fa-images"></i> Gallery (Open New Page)
+                <i className="fa-solid fa-images"></i> Gallery
               </Link>
             </li>
             <li>
@@ -142,7 +137,7 @@ export default function Navbar({ activePage = 'home' }) {
                 rel="noopener noreferrer"
                 onClick={closeMobileMenu}
               >
-                <i className="fa-solid fa-flask"></i> Research (Open New Page)
+                <i className="fa-solid fa-flask"></i> Research
               </Link>
             </li>
             <li>
@@ -152,7 +147,7 @@ export default function Navbar({ activePage = 'home' }) {
             </li>
             <li>
               <a href="#contact" onClick={closeMobileMenu}>
-                <i className="fa-solid fa-paper-plane"></i> Contact &amp; Get in Touch
+                <i className="fa-solid fa-paper-plane"></i> Get In Touch
               </a>
             </li>
           </ul>

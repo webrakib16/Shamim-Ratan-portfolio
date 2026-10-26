@@ -1,4 +1,4 @@
-/* =========================================================
+﻿/* =========================================================
    GOOGLE FONTS
 ========================================================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
@@ -23,7 +23,7 @@
     --cyan-glow: #218c94;
     --teal: #2DD4BF;
     --gold: #D7A52C;
-    --gold-light: #D8B66A;
+    --gold-light: #AB9F82;
     --gold-highlight: #E5C368;
     --gold-subtle: #AB9F82;
     --white: #ffffff;
@@ -89,7 +89,7 @@ nav.container.main-navbar-bar {
 }
 
 .nav-brand-box p .span-star {
-    color: #E6C15A;
+    color: #AB9F82;
 }
 
 /* Desktop Navigation Menu */
@@ -109,24 +109,12 @@ nav.container.main-navbar-bar {
 
 .desktop-nav-menu li a:hover,
 .desktop-nav-menu li a.active {
-    color: #E6C15A;
+    color: #AB9F82;
 }
 
 /* Mobile Direct Actions (Hidden on Desktop) */
 .mobile-direct-actions {
     display: none;
-}
-
-.mobile-direct-about-link {
-    color: antiquewhite;
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 6px 10px;
-    transition: color 0.3s ease;
-}
-
-.mobile-direct-about-link:hover {
-    color: #E6C15A;
 }
 
 .mobile-small-neon {
@@ -193,7 +181,7 @@ nav.container.main-navbar-bar {
 
 .mobile-drawer-links li a:hover,
 .mobile-drawer-links li a.active {
-    color: #00D8FF;
+    color: #AB9F82;
     padding-left: 8px;
 }
 
@@ -229,6 +217,11 @@ nav.container.main-navbar-bar {
     transform: translateY(-2px);
 }
 
+/* Navbar "Get In Touch" text color (same as "Shamim" brand accent) */
+.neon-git-text {
+    color: #AB9F82 !important;
+}
+
 .btn2 {
     border: 2px solid #218c94;
     box-shadow: 0 0 10px #218c94;
@@ -255,25 +248,25 @@ nav.container.main-navbar-bar {
 .download-btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    background: linear-gradient(135deg, var(--gold-light), #b88b3b);
+    gap: 12px;
+    background: linear-gradient(135deg, #F3CD67, #DCA733);
     color: #111;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 15px;
     padding: 14px 34px;
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    box-shadow: 0 10px 25px rgba(217, 181, 109, 0.35);
-    transition: all 0.35s ease;
+    box-shadow: 0 8px 25px rgba(229, 195, 104, 0.4);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     margin-top: 25px;
     text-decoration: none;
 }
 
 .download-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(217, 181, 109, 0.55);
-    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(229, 195, 104, 0.65);
+    background: linear-gradient(135deg, #FFE082, #E5B242);
 }
 
 /* =========================================================
@@ -355,6 +348,233 @@ header.hero-section {
     display: none; /* Hidden by default on Desktop and Laptop */
 }
 
+/* =========================================================
+   HERO CHEMISTRY ANIMATED DECOR (All devices, sits behind content)
+========================================================= */
+.hero-chem-decor {
+    display: block;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* SVG chemistry shapes */
+.chem-svg {
+    position: absolute;
+    overflow: visible;
+}
+
+.chem-benzene {
+    top: 10%;
+    left: 4%;
+    width: 130px;
+    height: 130px;
+    fill: none;
+    stroke: rgba(171, 159, 130, 0.45);
+    stroke-width: 1.6;
+    filter: drop-shadow(0 0 10px rgba(171, 159, 130, 0.3));
+    transform-origin: 50% 50%;
+    animation: chemSpin 55s linear infinite;
+}
+
+.chem-molecule {
+    bottom: 10%;
+    right: 3%;
+    width: 230px;
+    height: 150px;
+    stroke: rgba(33, 140, 148, 0.55);
+    stroke-width: 1.6;
+    filter: drop-shadow(0 0 10px rgba(33, 140, 148, 0.25));
+    animation: chemDrift 14s ease-in-out infinite;
+}
+
+.chem-atom {
+    fill: rgba(8, 18, 30, 0.85);
+    stroke-width: 1.8;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: chemAtomPulse 4s ease-in-out infinite;
+}
+
+.atom-c { stroke: rgba(0, 216, 255, 0.85); animation-delay: 0s; }
+.atom-o1 { stroke: rgba(171, 159, 130, 0.85); animation-delay: 1.1s; }
+.atom-o2 { stroke: rgba(171, 159, 130, 0.85); animation-delay: 2.2s; }
+.atom-h { stroke: rgba(45, 212, 191, 0.85); animation-delay: 3.1s; }
+
+.chem-flask {
+    bottom: 9%;
+    left: 7%;
+    width: 88px;
+    height: 124px;
+    fill: none;
+    stroke: rgba(0, 216, 255, 0.38);
+    stroke-width: 1.6;
+    filter: drop-shadow(0 0 10px rgba(0, 216, 255, 0.2));
+    transform-origin: 50% 90%;
+    animation: chemSway 11s ease-in-out infinite;
+}
+
+.flask-bubble {
+    fill: rgba(0, 216, 255, 0.4);
+    stroke: none;
+    animation: flaskBubbleRise 5.5s ease-in infinite;
+}
+
+.fb-1 { animation-delay: 0s; }
+.fb-2 { animation-delay: 1.6s; }
+.fb-3 { animation-delay: 3.1s; }
+
+.chem-formula {
+    position: absolute;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: rgba(171, 159, 130, 0.28);
+    letter-spacing: 1px;
+    white-space: nowrap;
+    animation: chemFloat 9s ease-in-out infinite;
+}
+
+.chem-formula.formula-1 { top: 8%; left: 8%; animation-delay: 0s; }
+.chem-formula.formula-2 { top: 18%; right: 10%; animation-delay: 1.4s; }
+.chem-formula.formula-3 { top: 42%; left: 4%; animation-delay: 2.6s; }
+.chem-formula.formula-4 { bottom: 22%; right: 6%; animation-delay: 3.4s; }
+.chem-formula.formula-5 { bottom: 8%; left: 18%; animation-delay: 4.2s; }
+
+.chem-bubble {
+    position: absolute;
+    bottom: -30px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(33, 140, 148, 0.55), rgba(33, 140, 148, 0.06));
+    border: 1px solid rgba(33, 140, 148, 0.35);
+    box-shadow: 0 0 12px rgba(33, 140, 148, 0.25);
+    animation: chemBubbleRise 12s linear infinite;
+}
+
+.chem-bubble.bubble-1 { width: 18px; height: 18px; left: 12%; animation-duration: 11s; animation-delay: 0s; }
+.chem-bubble.bubble-2 { width: 10px; height: 10px; left: 28%; animation-duration: 14s; animation-delay: 1.5s; }
+.chem-bubble.bubble-3 { width: 26px; height: 26px; left: 52%; animation-duration: 16s; animation-delay: 3s; }
+.chem-bubble.bubble-4 { width: 14px; height: 14px; left: 68%; animation-duration: 12s; animation-delay: 2s; }
+.chem-bubble.bubble-5 { width: 8px; height: 8px; left: 82%; animation-duration: 13s; animation-delay: 4.5s; }
+.chem-bubble.bubble-6 { width: 22px; height: 22px; left: 92%; animation-duration: 17s; animation-delay: 5.5s; }
+
+.chem-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(171, 159, 130, 0.18);
+    animation: chemRingPulse 8s ease-in-out infinite;
+}
+
+.chem-ring.ring-1 { width: 220px; height: 220px; top: 6%; right: -70px; }
+.chem-ring.ring-2 { width: 160px; height: 160px; bottom: 4%; left: -60px; animation-delay: 3s; }
+
+@keyframes chemFloat {
+    0%, 100% { transform: translateY(0) rotate(-2deg); opacity: 0.55; }
+    50% { transform: translateY(-18px) rotate(3deg); opacity: 1; }
+}
+
+@keyframes chemBubbleRise {
+    0% { transform: translateY(0) scale(0.7); opacity: 0; }
+    12% { opacity: 0.85; }
+    85% { opacity: 0.5; }
+    100% { transform: translateY(-105vh) scale(1.15); opacity: 0; }
+}
+
+@keyframes chemRingPulse {
+    0%, 100% { transform: scale(1); opacity: 0.35; }
+    50% { transform: scale(1.18); opacity: 0.75; }
+}
+
+@keyframes chemSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes chemDrift {
+    0%, 100% { transform: translateY(0) rotate(-1.5deg); }
+    50% { transform: translateY(-14px) rotate(2deg); }
+}
+
+@keyframes chemAtomPulse {
+    0%, 100% { transform: scale(1); filter: none; }
+    50% { transform: scale(1.35); filter: drop-shadow(0 0 8px rgba(0, 216, 255, 0.7)); }
+}
+
+@keyframes chemSway {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+}
+
+@keyframes flaskBubbleRise {
+    0% { transform: translateY(0); opacity: 0; }
+    25% { opacity: 0.9; }
+    100% { transform: translateY(-46px); opacity: 0; }
+}
+
+/* Desktop / Laptop / Tablet tuning (same animation, larger scale) */
+@media (min-width: 769px) {
+    .chem-benzene {
+        width: 190px;
+        height: 190px;
+        top: 8%;
+        left: 3%;
+    }
+
+    .chem-molecule {
+        width: 300px;
+        height: 190px;
+        bottom: 7%;
+        right: 2%;
+    }
+
+    .chem-flask {
+        width: 110px;
+        height: 156px;
+        bottom: 7%;
+        left: 5%;
+    }
+
+    .chem-formula {
+        font-size: 1.15rem;
+        color: rgba(171, 159, 130, 0.22);
+    }
+
+    .chem-formula.formula-1 { top: 9%; left: 5%; }
+    .chem-formula.formula-2 { top: 16%; right: 7%; }
+    .chem-formula.formula-3 { top: 55%; left: 3%; }
+    .chem-formula.formula-4 { bottom: 20%; right: 4%; }
+    .chem-formula.formula-5 { bottom: 9%; left: 14%; }
+
+    .chem-ring.ring-1 {
+        width: 340px;
+        height: 340px;
+        top: 2%;
+        right: -110px;
+        border-color: rgba(171, 159, 130, 0.14);
+    }
+
+    .chem-ring.ring-2 {
+        width: 260px;
+        height: 260px;
+        bottom: -6%;
+        left: -90px;
+        border-color: rgba(171, 159, 130, 0.14);
+    }
+
+    .chem-bubble {
+        box-shadow: 0 0 18px rgba(33, 140, 148, 0.3);
+    }
+
+    .chem-bubble.bubble-1 { width: 22px; height: 22px; left: 8%; }
+    .chem-bubble.bubble-2 { width: 12px; height: 12px; left: 24%; }
+    .chem-bubble.bubble-3 { width: 30px; height: 30px; left: 48%; }
+    .chem-bubble.bubble-4 { width: 16px; height: 16px; left: 64%; }
+    .chem-bubble.bubble-5 { width: 10px; height: 10px; left: 78%; }
+    .chem-bubble.bubble-6 { width: 26px; height: 26px; left: 90%; }
+}
+
 .mobile-chemistry-atom {
     position: relative;
     width: 150px;
@@ -427,8 +647,8 @@ header.hero-section {
 }
 
 .electron-gold {
-    background: #F5C84C;
-    box-shadow: 0 0 10px #F5C84C, 0 0 20px #F5C84C;
+    background: #AB9F82;
+    box-shadow: 0 0 10px #AB9F82, 0 0 20px #AB9F82;
 }
 
 .electron-teal {
@@ -636,9 +856,9 @@ header.hero-section {
 
 .wave-path-gold {
     fill: none;
-    stroke: #F5C84C;
+    stroke: #AB9F82;
     stroke-width: 3.5px;
-    filter: drop-shadow(0 0 18px rgba(245, 200, 76, 0.7));
+    filter: drop-shadow(0 0 18px rgba(171, 159, 130, 0.7));
 }
 
 .wave-path-subtle {
@@ -689,14 +909,14 @@ header.hero-section {
 }
 
 .p-1 { width: 5px; height: 5px; background: #00D8FF; top: 18%; left: 12%; box-shadow: 0 0 12px #00D8FF; animation-duration: 9s; }
-.p-2 { width: 6px; height: 6px; background: #F5C84C; top: 32%; left: 88%; box-shadow: 0 0 14px #F5C84C; animation-duration: 13s; animation-delay: 1s; }
+.p-2 { width: 6px; height: 6px; background: #AB9F82; top: 32%; left: 88%; box-shadow: 0 0 14px #AB9F82; animation-duration: 13s; animation-delay: 1s; }
 .p-3 { width: 4px; height: 4px; background: #00D8FF; top: 65%; left: 6%; box-shadow: 0 0 10px #00D8FF; animation-duration: 11s; animation-delay: 2s; }
-.p-4 { width: 7px; height: 7px; background: #F5C84C; top: 78%; left: 75%; box-shadow: 0 0 16px #F5C84C; animation-duration: 15s; }
+.p-4 { width: 7px; height: 7px; background: #AB9F82; top: 78%; left: 75%; box-shadow: 0 0 16px #AB9F82; animation-duration: 15s; }
 .p-5 { width: 4px; height: 4px; background: #00D8FF; top: 25%; left: 45%; box-shadow: 0 0 10px #00D8FF; animation-duration: 10s; animation-delay: 3s; }
 .p-6 { width: 5px; height: 5px; background: #2DD4BF; top: 48%; left: 28%; box-shadow: 0 0 12px #2DD4BF; animation-duration: 14s; }
-.p-7 { width: 6px; height: 6px; background: #F5C84C; top: 12%; left: 70%; box-shadow: 0 0 12px #F5C84C; animation-duration: 12s; animation-delay: 2.5s; }
+.p-7 { width: 6px; height: 6px; background: #AB9F82; top: 12%; left: 70%; box-shadow: 0 0 12px #AB9F82; animation-duration: 12s; animation-delay: 2.5s; }
 .p-8 { width: 4px; height: 4px; background: #00D8FF; top: 85%; left: 35%; box-shadow: 0 0 8px #00D8FF; animation-duration: 16s; }
-.p-9 { width: 5px; height: 5px; background: #F5C84C; top: 55%; left: 92%; box-shadow: 0 0 10px #F5C84C; animation-duration: 11s; }
+.p-9 { width: 5px; height: 5px; background: #AB9F82; top: 55%; left: 92%; box-shadow: 0 0 10px #AB9F82; animation-duration: 11s; }
 .p-10 { width: 4px; height: 4px; background: #00D8FF; top: 90%; left: 85%; box-shadow: 0 0 10px #00D8FF; animation-duration: 14s; animation-delay: 4s; }
 
 @keyframes floatParticleDust {
@@ -730,7 +950,7 @@ header.hero-section {
     display: inline-flex;
     align-items: center;
     gap: 14px;
-    color: #F5C84C;
+    color: #AB9F82;
     font-size: 13px;
     letter-spacing: 4px;
     font-weight: 700;
@@ -741,7 +961,7 @@ header.hero-section {
     display: inline-block;
     width: 35px;
     height: 1.5px;
-    background: #F5C84C;
+    background: #AB9F82;
     opacity: 0.85;
 }
 
@@ -755,10 +975,10 @@ header.hero-section {
 }
 
 .journey-main-title .golden-highlight {
-    color: #F5C84C;
+    color: #AB9F82;
     font-style: italic;
     font-weight: 700;
-    text-shadow: 0 0 30px rgba(245, 200, 76, 0.45);
+    text-shadow: 0 0 30px rgba(171, 159, 130, 0.45);
 }
 
 .journey-subtitle {
@@ -802,8 +1022,8 @@ header.hero-section {
     left: calc(80px + 63%);
     right: 80px;
     height: 3px;
-    background: #F5C84C;
-    box-shadow: 0 0 16px rgba(245, 200, 76, 0.9), 0 0 5px #F5C84C;
+    background: #AB9F82;
+    box-shadow: 0 0 16px rgba(171, 159, 130, 0.9), 0 0 5px #AB9F82;
     border-radius: 10px;
     z-index: 1;
 }
@@ -852,16 +1072,16 @@ header.hero-section {
 }
 
 .milestone-node-col.featured-node .milestone-circle-badge {
-    border-color: #F5C84C;
-    color: #F5C84C;
-    box-shadow: 0 0 25px rgba(245, 200, 76, 0.6);
+    border-color: #AB9F82;
+    color: #AB9F82;
+    box-shadow: 0 0 25px rgba(171, 159, 130, 0.6);
 }
 
 .milestone-node-col.featured-node:hover .milestone-circle-badge,
 .milestone-node-col.featured-node.hovered .milestone-circle-badge {
-    background: #F5C84C;
+    background: #AB9F82;
     color: #061321;
-    box-shadow: 0 0 45px rgba(245, 200, 76, 0.95);
+    box-shadow: 0 0 45px rgba(171, 159, 130, 0.95);
 }
 
 .milestone-year-text {
@@ -872,7 +1092,7 @@ header.hero-section {
 }
 
 .milestone-node-col.featured-node .milestone-year-text {
-    color: #F5C84C;
+    color: #AB9F82;
 }
 
 .milestone-stage-text {
@@ -917,14 +1137,14 @@ header.hero-section {
 /* Card 05: Golden Highlighted Card */
 .journey-card.featured-card {
     background: linear-gradient(180deg, #181c2b 0%, #0d121f 100%);
-    border: 2px solid #F5C84C;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(245, 200, 76, 0.4);
+    border: 2px solid #AB9F82;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(171, 159, 130, 0.4);
 }
 
 .journey-card.featured-card:hover,
 .journey-card.featured-card.active-highlight {
     border-color: #FFE082;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 45px rgba(245, 200, 76, 0.6);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7), 0 0 45px rgba(171, 159, 130, 0.6);
 }
 
 /* Pill Number Badge Top Left */
@@ -980,8 +1200,8 @@ header.hero-section {
 }
 
 .featured-card .card-sloped-edge-line {
-    background: #F5C84C;
-    box-shadow: 0 0 16px #F5C84C;
+    background: #AB9F82;
+    box-shadow: 0 0 16px #AB9F82;
 }
 
 /* Card Body Content */
@@ -1009,7 +1229,7 @@ header.hero-section {
 }
 
 .featured-card .card-sub-dept {
-    color: #F5C84C;
+    color: #AB9F82;
 }
 
 .card-mini-line {
@@ -1020,7 +1240,7 @@ header.hero-section {
 }
 
 .featured-card .card-mini-line {
-    background: rgba(245, 200, 76, 0.5);
+    background: rgba(171, 159, 130, 0.5);
 }
 
 .card-description-text {
@@ -1059,7 +1279,7 @@ header.hero-section {
 }
 
 .featured-card .read-more-btn {
-    color: #F5C84C;
+    color: #AB9F82;
 }
 
 .featured-card .read-more-btn:hover {
@@ -1090,16 +1310,16 @@ header.hero-section {
 }
 
 .featured-card .card-mini-icon-bubble {
-    background: rgba(245, 200, 76, 0.15);
-    border-color: #F5C84C;
-    color: #F5C84C;
-    box-shadow: 0 0 15px rgba(245, 200, 76, 0.4);
+    background: rgba(171, 159, 130, 0.15);
+    border-color: #AB9F82;
+    color: #AB9F82;
+    box-shadow: 0 0 15px rgba(171, 159, 130, 0.4);
 }
 
 .featured-card .card-mini-icon-bubble:hover {
-    background: #F5C84C;
+    background: #AB9F82;
     color: #061321;
-    box-shadow: 0 0 25px rgba(245, 200, 76, 0.9);
+    box-shadow: 0 0 25px rgba(171, 159, 130, 0.9);
 }
 
 /* =========================================================
@@ -1117,7 +1337,7 @@ header.hero-section {
     bottom: 25px;
     left: 48px;
     width: 3px;
-    background: linear-gradient(180deg, #00D8FF 0%, #00D8FF 75%, #F5C84C 100%);
+    background: linear-gradient(180deg, #00D8FF 0%, #00D8FF 75%, #AB9F82 100%);
     box-shadow: 0 0 14px rgba(0, 216, 255, 0.6);
     z-index: 1;
 }
@@ -1157,9 +1377,9 @@ header.hero-section {
 }
 
 .featured-mobile .mobile-circle-badge {
-    border-color: #F5C84C;
-    color: #F5C84C;
-    box-shadow: 0 0 25px rgba(245, 200, 76, 0.7);
+    border-color: #AB9F82;
+    color: #AB9F82;
+    box-shadow: 0 0 25px rgba(171, 159, 130, 0.7);
 }
 
 .mobile-content-box {
@@ -1180,7 +1400,7 @@ header.hero-section {
 }
 
 .featured-mobile .mobile-year-label span {
-    color: #F5C84C;
+    color: #AB9F82;
 }
 
 .mobile-interactive-card {
@@ -1196,9 +1416,9 @@ header.hero-section {
 }
 
 .featured-mobile .mobile-interactive-card {
-    border-color: #F5C84C;
+    border-color: #AB9F82;
     background: rgba(22, 26, 38, 0.9);
-    box-shadow: 0 8px 25px rgba(245, 200, 76, 0.3);
+    box-shadow: 0 8px 25px rgba(171, 159, 130, 0.3);
 }
 
 .mobile-card-img {
@@ -1890,6 +2110,53 @@ section.gallery .container,
     z-index: 2;
 }
 
+/* Section Title (matches the Education Journey header design) */
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    color: #AB9F82;
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.section-title > span::before,
+.section-title > span::after {
+    content: '';
+    display: inline-block;
+    width: 35px;
+    height: 1.5px;
+    background: #AB9F82;
+    opacity: 0.85;
+}
+
+.section-title h2 {
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 700;
+    color: #fff;
+    margin: 12px 0 16px;
+    letter-spacing: -0.5px;
+    font-family: 'Playfair Display', serif;
+}
+
+.section-title h2 .section-title-highlight {
+    color: #AB9F82;
+    font-style: italic;
+    text-shadow: 0 0 30px rgba(171, 159, 130, 0.45);
+}
+
+.section-title p {
+    color: #A6B8CC;
+    font-size: 1.05rem;
+}
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1936,8 +2203,8 @@ section.gallery .container,
 }
 
 .gallery-card:hover {
-    border-color: #18d3f3;
-    box-shadow: 0 20px 45px rgba(24, 211, 243, 0.22);
+    border-color: #A78A62;
+    box-shadow: 0 20px 45px rgba(167, 138, 98, 0.22);
 }
 
 .gallery-card::before {
@@ -1978,8 +2245,8 @@ section.gallery .container,
     display: inline-block;
     padding: 8px 18px;
     border-radius: 50px;
-    background: #18d3f3;
-    color: #07111f;
+    background: rgba(167, 138, 98, 0.28);
+    color: rgba(243, 250, 255, 0.75);
     font-size: 13px;
     font-weight: 600;
     margin-bottom: 15px;
@@ -2180,12 +2447,12 @@ section.gallery .container,
     left: 14px;
     padding: 4px 10px;
     border-radius: 50px;
-    background: rgba(6, 21, 48, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(167, 138, 98, 0.28);
+    border: 1px solid rgba(243, 250, 255, 0.18);
     font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
     font-weight: 600;
-    color: #22D3EE;
+    color: rgba(243, 250, 255, 0.75);
     z-index: 2;
     backdrop-filter: blur(8px);
 }
@@ -2196,8 +2463,8 @@ section.gallery .container,
     right: 14px;
     padding: 4px 12px;
     border-radius: 50px;
-    background: rgba(216, 182, 106, 0.85);
-    color: #111;
+    background: rgba(167, 138, 98, 0.28);
+    color: rgba(243, 250, 255, 0.75);
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
@@ -2783,6 +3050,63 @@ section.gallery .container,
 }
 
 @media (max-width: 768px) {
+    /* Hero: let content define the height instead of the wide aspect-ratio */
+    header.hero-section {
+        aspect-ratio: auto;
+        min-height: auto;
+        padding: 55px 0 45px;
+        overflow: hidden;
+    }
+
+    /* Enable chemistry themed decor */
+    .hero-chem-decor {
+        display: block;
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    /* Compact chemistry shapes for small screens */
+    .chem-benzene {
+        width: 92px;
+        height: 92px;
+        top: 5%;
+        left: 1%;
+    }
+
+    .chem-molecule {
+        width: 170px;
+        height: 108px;
+        bottom: 16%;
+        right: 0;
+    }
+
+    .chem-flask {
+        width: 60px;
+        height: 84px;
+        bottom: 18%;
+        left: 2%;
+    }
+
+    .header-content {
+        padding: 30px 22px 10px;
+    }
+
+    .header-content h4 {
+        font-size: 0.95rem;
+        letter-spacing: 1.2px;
+    }
+
+    /* Enable the mobile atom animation */
+    .mobile-hero-animation-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 28px;
+    }
+
     nav.container {
         flex-direction: column;
         gap: 20px;
@@ -2836,5 +3160,50 @@ section.gallery .container,
         flex-direction: column;
         padding: 60px 6%;
         text-align: center;
+    }
+}
+
+/* =========================================================
+   MOBILE NAVBAR: Only Name + Get In Touch + Hamburger
+   (All other links live inside the hamburger drawer)
+========================================================= */
+@media (max-width: 992px) {
+    /* Force navbar into a single row */
+    nav.container.main-navbar-bar {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        padding: 14px 5%;
+        text-align: left;
+    }
+
+    /* Hide the full desktop menu list */
+    .desktop-nav-menu {
+        display: none !important;
+    }
+
+    /* Show hamburger actions row */
+    .mobile-direct-actions {
+        display: flex !important;
+        align-items: center;
+        gap: 12px;
+        margin-left: auto;
+        flex-shrink: 0;
+    }
+
+    /* Slightly smaller brand text so it fits in one line */
+    .nav-brand-box h2 {
+        font-size: 1.5rem;
+    }
+
+    .nav-brand-box p {
+        font-size: 0.8rem;
+    }
+
+    /* Drawer should overlay below the sticky navbar */
+    .mobile-nav-drawer-menu {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        z-index: 999;
     }
 }

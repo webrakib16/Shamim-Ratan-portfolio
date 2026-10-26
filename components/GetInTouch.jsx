@@ -247,7 +247,7 @@ export default function GetInTouch() {
             <div className="card-text-inner">
               <span className="card-micro-label">Email</span>
               <h4 className="card-primary-val">
-                <a href="mailto:shamimraton.ru@gmail.com">shamimraton.ru@gmail.com</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=shamimraton.ru@gmail.com" target="_blank" rel="noopener noreferrer">shamimraton.ru@gmail.com</a>
               </h4>
               <p className="card-subtext">Feel free to drop an email anytime.</p>
             </div>
@@ -275,8 +275,10 @@ export default function GetInTouch() {
             <div className="card-text-inner">
               <span className="card-micro-label">Location</span>
               <h4 className="card-primary-val">
-                Rajshahi College <br />
-                <span className="city-sub">Rajshahi, Bangladesh</span>
+                <a href="https://www.google.com/maps/search/?api=1&query=Rajshahi+College" target="_blank" rel="noopener noreferrer">
+                  Rajshahi College <br />
+                  <span className="city-sub">Rajshahi, Bangladesh</span>
+                </a>
               </h4>
               <p className="card-subtext">You are always welcome to visit.</p>
             </div>
@@ -290,8 +292,10 @@ export default function GetInTouch() {
             <div className="card-text-inner">
               <span className="card-micro-label">Office</span>
               <h4 className="card-primary-val">
-                Department of Chemistry <br />
-                <span className="city-sub">Rajshahi College</span>
+                <a href="https://www.google.com/maps/search/?api=1&query=Department+of+Chemistry,+Rajshahi+College" target="_blank" rel="noopener noreferrer">
+                  Department of Chemistry <br />
+                  <span className="city-sub">Rajshahi College</span>
+                </a>
               </h4>
               <p className="card-subtext">For academic and official matters.</p>
             </div>
