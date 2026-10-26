@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shamim Ratan | Footer</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /*====================================
+ GOOGLE FONT & RESET
+=====================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#061321;
+
+    color:#fff;
+
+    overflow-x:hidden;
+
+}
+
+/*====================================
+ ROOT COLOR
+=====================================*/
+
+:root{
+
+    --bg:#061321;
+
+    --card:#0A1B2F;
+
+    --cyan:#00D8FF;
+
+    --gold:#D7A52C;
+
+    --white:#ffffff;
+
+    --text:#cfd8dc;
+
+    --line:rgba(255,255,255,.08);
+
+}
+
+/*====================================
+ FOOTER
+=====================================*/
+
+.footer{
+
+    position:relative;
+
+    background:linear-gradient(
+    180deg,
+    #071624 0%,
+    #061321 100%);
+
+    overflow:hidden;
+
+    padding:80px 8% 35px;
+
+}
+
+/*====================================
+ TOP GLOW LINE
+=====================================*/
+
+.top-line{
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:2px;
+
+    background:linear-gradient(
+    90deg,
+    transparent,
+    var(--cyan),
+    transparent);
+
+    box-shadow:0 0 18px var(--cyan);
+
+}
+
+/*====================================
+ CONTAINER
+=====================================*/
+
+.footer-wrapper{
+
+    display:grid;
+
+    grid-template-columns:
+    1.5fr
+    .8fr
+    1fr;
+
+    gap:70px;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/*====================================
+ BRAND
+=====================================*/
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:25px;
+
+}
+
+.brand img{
+
+    width:80px;
+
+    height:80px;
+
+    object-fit:contain;
+
+}
+
+.brand h2{
+
+    font-size:36px;
+
+    font-weight:700;
+
+    color:#fff;
+
+}
+
+.brand h2 span{
+
+    color:var(--gold);
+
+}
+
+.brand h5{
+
+    margin-top:6px;
+
+    color:var(--cyan);
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+.footer-left p{
+
+    max-width:430px;
+
+    line-height:2;
+
+    color:var(--text);
+
+    margin-bottom:35px;
+
+}
+
+/*====================================
+ SOCIAL
+=====================================*/
+
+.social-icons{
+
+    display:flex;
+
+    gap:18px;
+
+}
+
+.social-icons a{
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    background:rgba(255,255,255,.04);
+
+    -webkit-backdrop-filter: blur(12px);backdrop-filter:blur(12px);
+    
+     transition:.4s;
+
+}
+
+.social-icons a:hover{
+
+    background:var(--cyan);
+
+    color:#061321;
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 0 25px var(--cyan);
+
+}
+
+/*====================================
+ TITLE
+=====================================*/
+
+.footer-links h3,
+.footer-contact h3{
+
+    font-size:28px;
+
+    margin-bottom:35px;
+
+    position:relative;
+
+}
+
+.footer-links h3::after,
+.footer-contact h3::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-12px;
+
+    width:65px;
+
+    height:3px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+    90deg,
+    var(--gold),
+    var(--cyan));
+
+}
+
+/*====================================
+ QUICK LINKS
+=====================================*/
+
+.footer-links ul{
+    list-style:none;
+}
+
+.footer-links ul li{
+    margin:22px 0;
+}
+
+.footer-links ul li a{
+    text-decoration:none;
+    color:#d9d9d9;
+    font-size:17px;
+    transition:.35s;
+    position:relative;
+}
+
+.footer-links ul li a:hover{
+    color:var(--cyan);
+    padding-left:12px;
+}
+
+/*====================================
+ CONTACT
+=====================================*/
+
+.contact-box{
+    display:flex;
+    gap:18px;
+    margin-bottom:28px;
+    align-items:flex-start;
+}
+
+.contact-box i{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    color:var(--cyan);
+    font-size:18px;
+    transition:.4s;
+}
+
+.contact-box:hover i{
+    background:var(--cyan);
+    color:#061321;
+    box-shadow:0 0 25px var(--cyan);
+}
+
+.contact-box div{
+    color:#d7d7d7;
+    line-height:1.9;
+}
+
+/*====================================
+ DECORATION
+=====================================*/
+
+.flask{
+
+    position:absolute;
+
+    right:40px;
+
+    bottom:80px;
+
+    width:170px;
+
+    opacity:.95;
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+.dna{
+
+    position:absolute;
+
+    top:10px;
+
+    right:0;
+
+    width:150px;
+
+    opacity:.15;
+
+}
+
+.molecule{
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border:2px solid rgba(0,216,255,.05);
+
+    border-radius:50%;
+
+}
+
+.molecule1{
+
+    left:-70px;
+
+    top:20px;
+
+}
+
+.molecule2{
+
+    right:120px;
+
+    bottom:120px;
+
+}
+
+/*====================================
+ DIVIDER
+=====================================*/
+
+.footer-divider{
+
+    margin:70px 0 35px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.line{
+
+    flex:1;
+
+    height:1px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(0,216,255,.6),
+        rgba(215,165,44,.8),
+        transparent
+    );
+}
+
+.center-icon{
+
+    width:80px;
+
+    height:80px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 0 25px rgba(0,216,255,.25);
+
+}
+
+.center-icon img{
+
+    width:100px;
+    
+    
+   
+
+}
+
+/*====================================
+ FOOTER BOTTOM
+=====================================*/
+
+.footer-bottom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+.footer-bottom p{
+
+    color:#d7d7d7;
+
+    font-size:15px;
+
+}
+
+.footer-bottom span{
+
+    color:var(--gold);
+
+    font-weight:600;
+
+}
+
+/*====================================
+ ANIMATION
+=====================================*/
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+/*====================================
+ RESPONSIVE
+=====================================*/
+
+@media(max-width:992px){
+
+.footer-wrapper{
+
+grid-template-columns:1fr;
+
+gap:50px;
+
+}
+
+.footer-bottom{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.brand{
+
+justify-content:center;
+
+}
+
+.footer-left{
+
+text-align:center;
+
+}
+
+.social-icons{
+
+justify-content:center;
+
+}
+
+.footer-links,
+.footer-contact{
+
+text-align:center;
+
+}
+
+.footer-links h3::after,
+.footer-contact h3::after{
+
+left:50%;
+
+transform:translateX(-50%);
+
+}
+
+.contact-box{
+
+justify-content:center;
+
+}
+
+.flask,
+.dna{
+
+display:none;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.footer{
+
+padding:60px 25px;
+
+}
+
+.brand h2{
+
+font-size:28px;
+
+}
+
+.footer-links h3,
+.footer-contact h3{
+
+font-size:24px;
+
+}
+
+.social-icons a{
+
+width:48px;
+
+height:48px;
+
+}
+
+.center-icon{
+
+width:60px;
+
+height:60px;
+
+}
+
+}
+    </style>
+
+</head>
+
+<body>
+
+<!-- =========================
+Footer Start
+========================= -->
+
+<footer class="footer">
+
+<!-- Top Glow Line -->
+
+<div class="top-line"></div>
+
+<div class="footer-wrapper">
+
+<!-- =========================
+LEFT
+========================= -->
+
+<div class="footer-left">
+
+<div class="brand">
+
+<img src="./image/download.png" alt="Logo">
+
+<div>
+
+<h2>
+
+Shamim <span>Ratan</span>
+
+</h2>
+
+<h5>
+
+Lecturer Department of Chemistry <br>
+Rajshahi College
+
+</h5>
+
+</div>
+
+</div>
+
+<p>
+
+Dedicated to teaching Chemistry with passion and purpose.
+Building strong concepts and inspiring minds for a better tomorrow.
+
+</p>
+
+<div class="social-icons">
+
+<a href="https://www.facebook.com/share/14iL2Ks7jxD/"
+ target="_blank"
+ rel="noopener noreferrer" 
+ title="Facebook" aria-label="Facebook">
+
+<i class="fab fa-facebook-f"></i>
+
+</a>
+
+<a href="#"title="Linked In">
+
+<i class="fab fa-linkedin-in"></i>
+
+</a>
+
+<a href="mailto:info.shamimratan10@gmail.com" title="Email" aria-label="Send Email">
+
+<i class="fa-solid fa-envelope"></i>
+
+</a>
+
+</div>
+
+</div>
+
+<!-- =========================
+CENTER
+========================= -->
+
+<div class="footer-links">
+
+<h3>
+
+Quick Links
+
+</h3>
+
+<ul>
+
+<li>
+
+<a href="#navbar">Home</a>
+
+</li>
+
+<li>
+
+<a href="#">About</a>
+
+</li>
+
+<li>
+
+<a href="#">Gallery</a>
+
+</li>
+
+<li>
+
+<a href="#">Research</a>
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- =========================
+RIGHT
+========================= -->
+
+<div class="footer-contact">
+
+<h3>
+
+Get In Touch
+
+</h3>
+
+<div class="contact-box">
+
+<i class="fa-solid fa-location-dot"></i>
+
+<div>
+
+ Department Of Chemistry 
+
+<br>
+
+Rajshahi College
+
+<br>
+
+Saheb-Bazar Road ,Rajshahi, Bangladesh
+
+</div>
+
+</div>
+
+<div class="contact-box">
+
+<i class="fa-solid fa-envelope"></i>
+
+<div>
+
+info.shamimratan10@gmail.com
+
+</div>
+
+</div>
+
+<div class="contact-box">
+    <a href="tel:+8801737918175" title="Call">
+
+        <i class="fa-solid fa-phone"></i>
+
+
+    </a>
+
+<!-- <i class="fa-solid fa-phone"></i> -->
+
+<div>
+
++880 1737-918175
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Decorations -->
+
+<img src="./image/middile.png"
+
+class="flask"
+
+alt="Flask">
+
+<img src="./image/dna.png"
+
+class="dna"
+
+alt="DNA">
+
+<div class="molecule molecule1"></div>
+
+<div class="molecule molecule2"></div>
+
+<!-- Bottom Divider -->
+
+<div class="footer-divider">
+
+<div class="line"></div>
+
+<div class="center-icon">
+
+<img src="./image/download.png"
+
+alt="Flask">
+
+</div>
+
+<div class="line"></div>
+
+</div>
+
+<!-- Bottom -->
+
+<div class="footer-bottom">
+
+<p>
+
+© 2026
+
+<span>
+
+Shamim Ratan
+
+</span>
+
+All Rights Reserved.
+
+</p>
+
+<p>
+
+Designed & Developed by
+
+<span>
+
+Akib Rakib
+
+</span>
+
+</p>
+
+</div>
+
+</footer>
+
+</body>
+
+</html>
