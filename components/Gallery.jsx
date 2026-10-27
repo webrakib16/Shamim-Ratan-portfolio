@@ -392,8 +392,8 @@ export default function Gallery({ mode = 'preview' }) {
               onClick={() => setLightboxImg(item)}
             >
               <img src={item.src} alt={item.title} loading="lazy" />
+              <span className="gallery-card-tag">{item.tag}</span>
               <div className="gallery-overlay">
-                <span>{item.tag}</span>
                 <h3>{item.title}</h3>
               </div>
             </div>

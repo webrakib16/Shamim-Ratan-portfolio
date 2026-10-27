@@ -35,11 +35,6 @@ export default function Navbar({ activePage = 'home' }) {
       ========================================================= */}
       <ul className="nav-links desktop-nav-menu">
         <li>
-          <Link href="/" className={activePage === 'home' ? 'active' : ''}>
-            Home
-          </Link>
-        </li>
-        <li>
           <Link href="/#about">About</Link>
         </li>
         <li>

@@ -67,7 +67,7 @@ export default function Timeline() {
       num: '05',
       year: 'Present',
       stage: 'Senior Lecturer',
-      title: 'Academic Excellence',
+      title: 'Department of Chemistry',
       subtitle: 'Rajshahi College',
       description:
         'Continuing to educate, mentor students, and contribute to scientific research.',
