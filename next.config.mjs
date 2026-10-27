@@ -15,6 +15,21 @@ const nextConfig = {
           { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
           { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()' },
           { key: 'X-DNS-Prefetch-Control', value: 'on' },
+          {
+            key: 'Content-Security-Policy',
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline'",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com",
+              "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:",
+              "img-src 'self' data: blob:",
+              "connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com",
+              "frame-ancestors 'none'",
+              "base-uri 'self'",
+              "form-action 'self'",
+              "upgrade-insecure-requests",
+            ].join('; '),
+          },
         ],
       },
     ];
