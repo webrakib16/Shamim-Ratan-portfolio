@@ -1,7 +1,4 @@
-﻿/* =========================================================
-   GOOGLE FONTS
-========================================================= */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+﻿/* Fonts are preloaded via <link> tags in app/layout.jsx (removed render-blocking @import chain) */
 
 /* =========================================================
    GLOBAL RESET & ROOT VARIABLES
@@ -274,7 +271,7 @@ nav.container.main-navbar-bar {
    ORIGINAL HERO / HEADER SECTION
 ========================================================= */
 header.hero-section {
-    background-image: url("/assets/ba904de4-4652-41bc-9c3a-0ca0cedd4630.png");
+    background-image: url("/assets/hero-bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -790,11 +787,12 @@ header.hero-section {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-.info-card h5 {
+.info-card .card-label-heading {
     font-size: 1rem;
     color: #FFFFFF;
     font-weight: 600;
     margin-bottom: 4px;
+    display: block;
 }
 
 .info-card p {
@@ -3086,6 +3084,21 @@ section.gallery .container,
 
     .flask, .dna {
         display: none;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION SUPPORT (accessibility)
+   Users who request reduced motion get a calm, static page.
+========================================================= */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
 

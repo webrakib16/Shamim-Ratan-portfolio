@@ -1,4 +1,4 @@
-import Image from 'next/image';
+﻿import Image from 'next/image';
 
 export default function About() {
   return (
@@ -31,40 +31,40 @@ export default function About() {
 
           <div className="info-grid">
             <div className="info-card">
-              <span>🎓</span>
+              <span>ðŸŽ“</span>
               <div>
-                <h5>Education</h5>
+                <span class="card-label-heading">Education</span>
                 <p>36th BCS Education Cadre</p>
               </div>
             </div>
 
             <div className="info-card">
-              <span>🧪</span>
+              <span>ðŸ§ª</span>
               <div>
-                <h5>Specialization</h5>
+                <span class="card-label-heading">Specialization</span>
                 <p>Organic Chemistry</p>
               </div>
             </div>
 
             <div className="info-card">
-              <span>🏫</span>
+              <span>ðŸ«</span>
               <div>
-                <h5>Institution</h5>
+                <span class="card-label-heading">Institution</span>
                 <p>Rajshahi College</p>
               </div>
             </div>
 
             <div className="info-card">
-              <span>📚</span>
+              <span>ðŸ“š</span>
               <div>
-                <h5>Experience</h5>
+                <span class="card-label-heading">Experience</span>
                 <p>4+ Years Teaching</p>
               </div>
             </div>
           </div>
 
           <a
-            href="/assets/PDS_18136141064_মোঃ শামীম রতন.pdf"
+            href="/assets/PDS_18136141064_à¦®à§‹à¦ƒ à¦¶à¦¾à¦®à§€à¦® à¦°à¦¤à¦¨.pdf"
             download="Shamim_Ratan_CV.pdf"
             className="download-btn"
           >

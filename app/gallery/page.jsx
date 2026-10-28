@@ -4,6 +4,7 @@ import GetInTouch from '@/components/GetInTouch';
 import Footer from '@/components/Footer';
 
 export const metadata = {
+  metadataBase: new URL('https://shamim-ratan-portfolio.vercel.app'),
   title: 'Gallery | MD. Shamim Raton',
   description: 'Academic memories, teaching moments, tours, and milestones of MD. Shamim Raton at Rajshahi College.',
 };

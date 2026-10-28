@@ -142,7 +142,7 @@ export default function GetInTouch() {
             </div>
 
             {isSubmitted ? (
-              <div className="form-success-alert">
+              <div className="form-success-alert" role="status">
                 <i className="fa-solid fa-circle-check"></i>
                 <div>
                   <h4>Message Sent Successfully!</h4>
@@ -160,6 +160,7 @@ export default function GetInTouch() {
                         type="text"
                         name="name"
                         required
+                        aria-label="Your Name"
                         placeholder="Your Name"
                         value={formData.name}
                         onChange={handleInputChange}
@@ -174,6 +175,7 @@ export default function GetInTouch() {
                         type="email"
                         name="email"
                         required
+                        aria-label="Your Email"
                         placeholder="Your Email"
                         value={formData.email}
                         onChange={handleInputChange}
@@ -189,6 +191,7 @@ export default function GetInTouch() {
                     <select
                       name="subject"
                       required
+                      aria-label="Subject"
                       value={formData.subject}
                       onChange={handleInputChange}
                     >
@@ -212,13 +215,21 @@ export default function GetInTouch() {
                     <textarea
                       name="message"
                       required
+                      aria-label="Your Message (maximum 500 characters)"
+                      maxLength={500}
                       placeholder="Your Message"
                       rows={4}
                       value={formData.message}
                       onChange={handleInputChange}
                     ></textarea>
                   </div>
-                  <div className="char-counter-label">{charCount} / 500</div>
+                  <div
+                    className="char-counter-label"
+                    aria-live="polite"
+                    aria-label="Character count"
+                  >
+                    {charCount} / 500
+                  </div>
                 </div>
 
                 {/* Row 4: Submit Button */}

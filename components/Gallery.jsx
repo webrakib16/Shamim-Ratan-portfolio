@@ -1,17 +1,27 @@
-'use client';
+﻿'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function Gallery({ mode = 'preview' }) {
   const [activeTab, setActiveTab] = useState('academic');
   const [lightboxImg, setLightboxImg] = useState(null);
 
+  // Modal accessibility: close lightbox with Escape key
+  useEffect(() => {
+    if (!lightboxImg) return;
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') setLightboxImg(null);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [lightboxImg]);
+
   // Gallery categories with full images
   const galleryData = {
     academic: {
       title: 'Academic Gallery',
-      subtitle: 'Teaching & academic milestones — Rajshahi College',
+      subtitle: 'Teaching & academic milestones â€” Rajshahi College',
       items: [
         {
           id: 1,
@@ -271,7 +281,7 @@ export default function Gallery({ mode = 'preview' }) {
       <section className="full-gallery-page" id="gallery-page">
         <div className="gallery-inner">
           <header className="gallery-header">
-            <div className="gallery-eyebrow">✦ Gallery ✦</div>
+            <div className="gallery-eyebrow">âœ¦ Gallery âœ¦</div>
             <h2 className="gallery-title">
               Memories &amp; <span>milestones</span>
             </h2>
@@ -326,6 +336,15 @@ export default function Gallery({ mode = 'preview' }) {
                 className="tile"
                 key={idx}
                 onClick={() => setLightboxImg(item)}
+                role="button"
+                tabIndex={0}
+                aria-label={`View image: ${item.title}`}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setLightboxImg(item);
+                  }
+                }}
               >
                 <span className="tile-index">{String(idx + 1).padStart(2, '0')}</span>
                 <span className="tile-tag">{item.tag}</span>
@@ -345,6 +364,9 @@ export default function Gallery({ mode = 'preview' }) {
             <div
               className="lightbox-modal"
               onClick={() => setLightboxImg(null)}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Image preview"
             >
               <div
                 className="lightbox-content"
@@ -353,6 +375,7 @@ export default function Gallery({ mode = 'preview' }) {
                 <button
                   className="lightbox-close"
                   onClick={() => setLightboxImg(null)}
+                  aria-label="Close image preview"
                 >
                   <i className="fa-solid fa-xmark"></i>
                 </button>
@@ -390,6 +413,15 @@ export default function Gallery({ mode = 'preview' }) {
               key={index}
               className={`gallery-card ${item.type}`}
               onClick={() => setLightboxImg(item)}
+              role="button"
+              tabIndex={0}
+              aria-label={`View image: ${item.title}`}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setLightboxImg(item);
+                }
+              }}
             >
               <img src={item.src} alt={item.title} loading="lazy" />
               <span className="gallery-card-tag">{item.tag}</span>
@@ -410,7 +442,13 @@ export default function Gallery({ mode = 'preview' }) {
       </div>
 
       {lightboxImg && (
-        <div className="lightbox-modal" onClick={() => setLightboxImg(null)}>
+        <div
+          className="lightbox-modal"
+          onClick={() => setLightboxImg(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image preview"
+        >
           <div
             className="lightbox-content"
             onClick={(e) => e.stopPropagation()}
@@ -418,6 +456,7 @@ export default function Gallery({ mode = 'preview' }) {
             <button
               className="lightbox-close"
               onClick={() => setLightboxImg(null)}
+              aria-label="Close image preview"
             >
               <i className="fa-solid fa-xmark"></i>
             </button>

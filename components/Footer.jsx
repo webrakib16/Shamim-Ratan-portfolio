@@ -68,10 +68,6 @@ export default function Footer() {
               <i className="fa-brands fa-facebook-f"></i>
             </a>
 
-            <a href="#" title="LinkedIn" aria-label="LinkedIn">
-              <i className="fa-brands fa-linkedin-in"></i>
-            </a>
-
             <a
               href="mailto:shamimraton.ru@gmail.com"
               title="Email"
@@ -103,7 +99,7 @@ export default function Footer() {
               <Link href="/#about">About Professor</Link>
             </li>
             <li>
-              <Link href="/#journey">Education Journey</Link>
+              <Link href="/#journey">Education</Link>
             </li>
             <li>
               <Link href="/gallery" target="_blank" rel="noopener noreferrer">
@@ -148,9 +144,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Floating Animated Flask & DNA */}
-      <img src="/assets/middile.png" className="flask" alt="Flask" />
-      <img src="/assets/dna.png" className="dna" alt="DNA" />
+      {/* Floating Animated Flask & DNA (decorative) */}
+      <img src="/assets/middile.png" className="flask" alt="" aria-hidden="true" />
+      <img src="/assets/dna.png" className="dna" alt="" aria-hidden="true" />
       <div className="molecule molecule1"></div>
       <div className="molecule molecule2"></div>
 

@@ -1,10 +1,20 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Timeline() {
   const [selectedMilestone, setSelectedMilestone] = useState(null);
   const [activeHoverNode, setActiveHoverNode] = useState(null);
+
+  // Modal accessibility: close detail modal with Escape key
+  useEffect(() => {
+    if (!selectedMilestone) return;
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') setSelectedMilestone(null);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [selectedMilestone]);
 
   const milestones = [
     {
@@ -278,6 +288,9 @@ export default function Timeline() {
           <div
             className="journey-modal-backdrop"
             onClick={() => setSelectedMilestone(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-label={selectedMilestone?.title || 'Milestone details'}
           >
             <div
               className={`journey-modal-dialog ${
@@ -288,6 +301,7 @@ export default function Timeline() {
               <button
                 className="journey-modal-close"
                 onClick={() => setSelectedMilestone(null)}
+                aria-label="Close milestone details"
               >
                 <i className="fa-solid fa-xmark"></i>
               </button>
