@@ -6,9 +6,8 @@ export default function Footer() {
       {/* Top Glow Line */}
       <div className="top-line"></div>
 
-      {/* ========================================================
-          ANIMATED FOOTER BACKGROUND LAYERS
-      ========================================================= */}
+      {/* ANIMATED FOOTER BACKGROUND LAYERS*/}
+      
       <div className="footer-animated-bg-canvas">
         {/* Pulsing Molecule Rings */}
         <div className="footer-orbit-ring orbit-ring-1">

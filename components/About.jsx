@@ -31,40 +31,40 @@ export default function About() {
 
           <div className="info-grid">
             <div className="info-card">
-              <span>ðŸŽ“</span>
+              <span className="info-card-icon"><i className="fa-solid fa-graduation-cap"></i></span>
               <div>
-                <span class="card-label-heading">Education</span>
+                <span className="card-label-heading">Education</span>
                 <p>36th BCS Education Cadre</p>
               </div>
             </div>
 
             <div className="info-card">
-              <span>ðŸ§ª</span>
+              <span className="info-card-icon"><i className="fa-solid fa-flask"></i></span>
               <div>
-                <span class="card-label-heading">Specialization</span>
+                <span className="card-label-heading">Specialization</span>
                 <p>Organic Chemistry</p>
               </div>
             </div>
 
             <div className="info-card">
-              <span>ðŸ«</span>
+              <span className="info-card-icon"><i className="fa-solid fa-school"></i></span>
               <div>
-                <span class="card-label-heading">Institution</span>
+                <span className="card-label-heading">Institution</span>
                 <p>Rajshahi College</p>
               </div>
             </div>
 
             <div className="info-card">
-              <span>ðŸ“š</span>
+              <span className="info-card-icon"><i className="fa-solid fa-book-open"></i></span>
               <div>
-                <span class="card-label-heading">Experience</span>
+                <span className="card-label-heading">Experience</span>
                 <p>4+ Years Teaching</p>
               </div>
             </div>
           </div>
 
           <a
-            href="/assets/PDS_18136141064_à¦®à§‹à¦ƒ à¦¶à¦¾à¦®à§€à¦® à¦°à¦¤à¦¨.pdf"
+            href="/assets/Shamim_Ratan_CV.pdf"
             download="Shamim_Ratan_CV.pdf"
             className="download-btn"
           >
