@@ -24,7 +24,7 @@ const nextConfig = {
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com",
               "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:",
               "img-src 'self' data: blob:",
-              "connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com",
+              "connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com https://api.web3forms.com",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self'",

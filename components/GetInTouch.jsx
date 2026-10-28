@@ -13,6 +13,13 @@ export default function GetInTouch() {
   const [charCount, setCharCount] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [sendError, setSendError] = useState(false);
+
+  // Contact form delivery via Web3Forms (free).
+  // Set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in .env.local *and* in the Vercel dashboard.
+  // Until the key is set, the form falls back to a prefilled mailto: compose
+  // so messages always reach the owner.
+  const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
   // Touch devices (mobile/tablet) -> direct call, Desktop (hover devices) -> WhatsApp
   const [isTouchDevice, setIsTouchDevice] = useState(true);
@@ -37,20 +44,56 @@ export default function GetInTouch() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleMailtoFallback = () => {
+    const subject = encodeURIComponent(
+      `Portfolio message — ${formData.subject || 'General Question'} (from ${formData.name || 'Website visitor'})`
+    );
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nSubject: ${formData.subject}\n\n${formData.message}`
+    );
+    window.location.href = `mailto:shamimraton.ru@gmail.com?subject=${subject}&body=${body}`;
+  };
+
+  const resetForm = () => {
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    setCharCount(0);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSendError(false);
 
-    // Simulate sending message
-    setTimeout(() => {
+    try {
+      if (WEB3FORMS_KEY) {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            access_key: WEB3FORMS_KEY,
+            from_name: 'Portfolio Contact Form',
+            ...formData,
+          }),
+        });
+        if (!res.ok) throw new Error('Delivery failed');
+      } else {
+        // No key configured yet: real delivery via the visitor's mail client
+        handleMailtoFallback();
+      }
+
       setIsSubmitting(false);
       setIsSubmitted(true);
       setTimeout(() => {
         setIsSubmitted(false);
-        setFormData({ name: '', email: '', subject: '', message: '' });
-        setCharCount(0);
+        resetForm();
       }, 4000);
-    }, 1000);
+    } catch {
+      setIsSubmitting(false);
+      setSendError(true);
+    }
   };
 
   return (
@@ -151,6 +194,26 @@ export default function GetInTouch() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="message-form-body">
+                {/* Honeypot field for bots (hidden from humans) */}
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  className="hidden-botcheck"
+                  style={{ display: 'none' }}
+                  tabIndex={-1}
+                  aria-hidden="true"
+                />
+
+                {sendError && (
+                  <div className="form-error-alert" role="alert">
+                    <i className="fa-solid fa-triangle-exclamation"></i>
+                    <div>
+                      <h4>Message could not be sent</h4>
+                      <p>Please try again, or email me directly at shamimraton.ru@gmail.com.</p>
+                    </div>
+                  </div>
+                )}
+
                 {/* Row 1: Name and Email */}
                 <div className="form-two-cols">
                   <div className="form-input-group">

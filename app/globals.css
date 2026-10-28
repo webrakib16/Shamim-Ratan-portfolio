@@ -2007,6 +2007,35 @@ header.hero-section {
     color: #00D8FF;
 }
 
+/* Contact form error alert */
+.form-error-alert {
+    padding: 18px 20px;
+    border-radius: 14px;
+    background: rgba(255, 82, 82, 0.1);
+    border: 1px solid rgba(255, 82, 82, 0.65);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    color: #fff;
+    animation: fadeIn 0.3s ease;
+}
+
+.form-error-alert i {
+    font-size: 26px;
+    color: #FF5252;
+    margin-top: 2px;
+}
+
+.form-error-alert h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.form-error-alert p {
+    color: #D9C4C4;
+    font-size: 0.9rem;
+}
+
 .form-success-alert h4 {
     font-size: 18px;
     font-weight: 700;
